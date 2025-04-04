@@ -13,4 +13,6 @@ git remote add origin https://github.com/DimaFantasy/gerb2tiff
 Шаг 5: Закоммитить файлы и отправить изменения
 git add .
 git commit -m "Начальная версия"
-git push --force origin main
+git push --force origin master 
+
+master имя текушего branch
