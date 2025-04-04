@@ -54,7 +54,7 @@ def convert_gerber(input_files: List[str], output_file: str = None, options: dic
         options = {}
     
     # Загрузка DLL
-    dll_path = Path(__file__).parent / "gerb2tiff.dll"
+    dll_path = Path(__file__).parent / "gerb2tiff_x64.dll"
     print(f"Путь к DLL: {dll_path}")
     
     if not dll_path.exists():
