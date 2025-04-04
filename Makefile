@@ -32,7 +32,7 @@ SRCS := \
     gerber.cpp \
     polygon.cpp \
     gerber_bison.cc \
-    gerber_flex.cc
+    gerber_flex.cc 
 
 # Основная цель
 all: $(BUILD_TARGET)
@@ -68,7 +68,7 @@ else ifeq ($(BUILD_TARGET), x64)
 	@strip --strip-unneeded gerb2tiff_x64.dll
 	@echo "Stripped: gerb2tiff_x64.dll"
 else
-	$(error Unknown BUILD_TARGET. Please use MSYS2 MINGW32 or MINGW64)
+	$(error Unknown BUILD_TARGET. Please use MSYS2 MINGW32 or MINGW64) 
 endif
 
 .PHONY: all x64 x32 clean strip_debug

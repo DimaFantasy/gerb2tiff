@@ -75,7 +75,7 @@ def convert_gerber(input_files: List[str], output_file: str = None, options: dic
 
     # Формирование JSON
     params = {
-        "imageDPI": options.get("imageDPI", 2400),
+        "imageDPI": options.get("imageDPI", 1024),
         "optRotation": options.get("optRotation", 0),
         "optGrowUnitsMillimeters": options.get("optGrowUnitsMillimeters", False),
         "optBoarderUnitsMillimeters": options.get("optBoarderUnitsMillimeters", False),
