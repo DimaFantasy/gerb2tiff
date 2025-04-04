@@ -1756,6 +1756,3 @@ yyreturn:
 
 /* Line 1684 of yacc.c  */
 #line 107 "src/gerber_bison.yy"
-
-
-
