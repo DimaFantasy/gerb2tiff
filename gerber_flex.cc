@@ -27,6 +27,10 @@
 #ifndef FLEXINT_H
 #define FLEXINT_H
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 /* C99 systems have <inttypes.h>. Non-C99 systems may or may not. */
 
 #if defined (__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
