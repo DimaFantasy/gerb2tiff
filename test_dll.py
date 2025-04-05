@@ -4,47 +4,7 @@ from pathlib import Path
 from typing import List
 import json
 
-class GerberOptions(Structure):
-    _fields_ = [
-        ("imageDPI", c_double),
-        ("optRotation", c_double),
-        ("optGrowUnitsMillimeters", c_bool),
-        ("optBoarderUnitsMillimeters", c_bool),
-        ("optBoarder", c_double),
-        ("optInvertPolarity", c_bool),
-        ("optTestOnly", c_bool),
-        ("optVerbose", c_int),
-        ("rowsPerStrip", c_uint),
-        ("optShowArea", c_bool),
-        ("optQuiet", c_bool),
-        ("optGrowSize", c_double),
-        ("optScaleX", c_double),
-        ("optScaleY", c_double),
-        ("outputFilename", c_char_p),
-        ("inputFiles", POINTER(c_char_p)),
-        ("inputFileCount", c_uint)
-    ]
 
-class GerberOptionsC(Structure):
-    _fields_ = [
-        ("imageDPI", c_double),
-        ("optRotation", c_double),
-        ("optGrowUnitsMillimeters", c_bool),
-        ("optBoarderUnitsMillimeters", c_bool),
-        ("optBoarder", c_double),
-        ("optInvertPolarity", c_bool),
-        ("optTestOnly", c_bool),
-        ("optVerbose", c_int),
-        ("rowsPerStrip", c_uint),
-        ("optShowArea", c_bool),
-        ("optQuiet", c_bool),
-        ("optGrowSize", c_double),
-        ("optScaleX", c_double),
-        ("optScaleY", c_double),
-        ("outputFilename", c_char * 256),
-        ("inputFiles", (c_char * 256) * 10),
-        ("inputFileCount", c_int)
-    ]
 
 def convert_gerber(input_files: List[str], output_file: str = None, options: dict = None):
     """

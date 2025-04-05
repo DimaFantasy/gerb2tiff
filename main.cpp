@@ -77,7 +77,6 @@ void error(const string &message)
     exit(1);
 }
 
-
 //***************************************************
 // Global variables of plotting parameters
 //**************************************************
@@ -192,7 +191,6 @@ void horizontalLine(int x1, int x2, unsigned char *buffer, Polarity_t polarity)
 
 } // end HorizontalLine()
 
-
 //**********************************************************
 struct GerberOptions
 {
@@ -214,7 +212,7 @@ struct GerberOptions
     std::vector<std::string> inputFiles;
 };
 
-extern "C" __declspec(dllexport) int processGerber(const GerberOptions &options)
+extern "C" __declspec(dllexport) int __stdcall processGerber(const GerberOptions &options)
 {
     clock_t start_clock = clock();
     std::string inputfile;
@@ -496,7 +494,6 @@ extern "C" __declspec(dllexport) int processGerber(const GerberOptions &options)
                 }
             }
         }
-
     }
     TIFFClose(tif);
 
@@ -515,7 +512,7 @@ extern "C" __declspec(dllexport) int processGerber(const GerberOptions &options)
     return 0;
 }
 
-extern "C" __declspec(dllexport) int processGerberWrapper(int argc, char **argv)
+extern "C" __declspec(dllexport) int __stdcall processGerberWrapper(int argc, char **argv)
 {
     GerberOptions options;
 
@@ -617,7 +614,7 @@ extern "C" __declspec(dllexport) int processGerberWrapper(int argc, char **argv)
     return processGerber(options);
 }
 
-extern "C" __declspec(dllexport) int processGerberJSON(const char *jsonParams)
+extern "C" __declspec(dllexport) int __stdcall processGerberJSON(const char *jsonParams)
 {
     try
     {

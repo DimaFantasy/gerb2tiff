@@ -11,13 +11,17 @@ else
     $(error Unknown build environment. Please use MSYS2 MINGW32 or MINGW64)
 endif
 
+# Указываем текущую директорию как PROJECT_DIR, если она не задана
+PROJECT_DIR := $(CURDIR)
+
 # Компилятор
 CXX := g++
 
 # Флаги компиляции
 CXXFLAGS := -Wall -Wextra -static -I$(INCLUDE_PATH) -L$(LIB_PATH)
 CXXFLAGS += -I$(PROJECT_DIR)/include
-LDFLAGS := -lm -lpthread -lstdc++
+LDFLAGS := -lm -lpthread -lstdc++ -Wl,--output-def,gerb2tiff.def -Wl,--kill-at
+
 
 # Библиотеки
 LIBS := \
